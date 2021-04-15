@@ -1,1 +1,115 @@
-<p>crear works!</p>
+<div class="header">
+  <h3>{{ "CREAR.header" | translate }}</h3>
+</div>
+
+<div class="row">
+  <div class="col-xl-7">
+    <!-- FORM -->
+    <form class="needs-validation" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="add-product-form">
+        <!-- Nombre -->
+        <div class="form-group row">
+          <label class="col-xl-3 col-sm-4 mb-0"
+            >{{ "CREAR.title" | translate }}:</label
+          >
+          <div class="col-xl-8 col-sm-7">
+            <input
+              class="form-control first-letter-uppercase"
+              type="text"
+              formControlName="nombre"
+            />
+            <div
+              *ngIf="
+                getNombre.errors?.required &&
+                (getNombre.dirty || getNombre.touched)
+              "
+              class="text text-danger"
+            >
+              {{ "CREAR.msn_err_required" | translate }}
+            </div>
+            <div
+              *ngIf="
+                getNombre.errors?.minlength &&
+                (getNombre.dirty || getNombre.touched)
+              "
+              class="text text-danger"
+            >
+              {{ "CREAR.msn_err_minlength" | translate }}
+              {{ getNombre.errors?.minlength.requiredLength }}
+            </div>
+            <div
+              *ngIf="
+                getNombre.errors?.maxlength &&
+                (getNombre.dirty || getNombre.touched)
+              "
+              class="text text-danger"
+            >
+              {{ "CREAR.msn_err_maxlength" | translate }}
+              {{ getNombre.errors?.maxlength.requiredLength }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Profesor -->
+        <div class="form-group row">
+          <label class="col-xl-3 col-sm-4 mb-0"
+            >{{ "CREAR.professor" | translate }}:</label
+          >
+          <div class="col-xl-8 col-sm-7">
+            <input
+              class="form-control first-letter-uppercase"
+              type="text"
+              formControlName="Profesor"
+            />
+            <div
+              *ngIf="
+                getProfesor.errors?.required &&
+                (getProfesor.dirty || getProfesor.touched)
+              "
+              class="text text-danger"
+            >
+              {{ "CREAR.msn_err_required" | translate }}
+            </div>
+            <div
+              *ngIf="
+                getProfesor.errors?.minlength &&
+                (getProfesor.dirty || getProfesor.touched)
+              "
+              class="text text-danger"
+            >
+              {{ "CREAR.msn_err_minlength" | translate }}
+              {{ getProfesor.errors?.minlength.requiredLength }}
+            </div>
+            <div
+              *ngIf="
+                getProfesor.errors?.maxlength &&
+                (getProfesor.dirty || getProfesor.touched)
+              "
+              class="text text-danger"
+            >
+              {{ "CREAR.msn_err_maxlength" | translate }}
+              {{ getProfesor.errors?.maxlength.requiredLength }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Materia input form -->
+        <!-- Fecha input form -->
+      </div>
+      <br /><br />
+
+      <div class="form-group row mb-0">
+        <div class="product-buttons col-xl-8 col-sm-7 offset-sm-4">
+          <button
+            type="submit"
+            class="btn btn-primary mr-1"
+            [disabled]="!form.valid"
+          >
+            {{ "CREAR.btn_add" | translate }}
+          </button>
+        </div>
+      </div>
+    </form>
+    <!-- /FORM -->
+  </div>
+</div>

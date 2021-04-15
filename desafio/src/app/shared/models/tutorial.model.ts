@@ -5,5 +5,4 @@ export interface TutorialModel {
     profesor?: string;
     materia?: string;
     fecha?: string;
-    // materia_id?: null; //ignorar este campo
 }

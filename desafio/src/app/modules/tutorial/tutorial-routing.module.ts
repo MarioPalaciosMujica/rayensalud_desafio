@@ -10,11 +10,6 @@ const routes: Routes = [
         pathMatch: 'full',
         component: ListaComponent
     },
-    // {
-    //     path: 'inicio/:input',
-    //     pathMatch: 'full',
-    //     component: ListaComponent
-    // },
     {
         path: 'crear',
         pathMatch: 'full',

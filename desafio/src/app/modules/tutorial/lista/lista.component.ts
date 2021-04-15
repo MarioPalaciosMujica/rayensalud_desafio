@@ -14,6 +14,7 @@ import es from '@angular/common/locales/es';
 export class ListaComponent implements OnInit, OnDestroy {
 
     public tutorialList: TutorialModel[] = [];
+    public searchInput: string = '';
     private subscriptions$: Subscription[] = [];
 
   constructor(

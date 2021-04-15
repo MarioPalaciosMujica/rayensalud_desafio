@@ -1,0 +1,26 @@
+{
+  "LISTA": {
+    "header": "Tutoriales",
+    "search": "Buscar por nombre:",
+    "btn_search": "Buscar",
+    "btn_create": "Crear Nuevo Tutorial",
+    "btn_delete_all": "Eliminar Todos Los Tutoriales"
+  },
+  "CREAR": {
+    "header": "Crear Tutorial",
+    "title": "Titulo",
+    "professor": "Profesor",
+    "topic": "Materia",
+    "date": "Fecha",
+    "btn_add": "Agregar"
+  },
+  "EDITAR": {
+    "header": "Editar Tutorial",
+    "title": "Titulo",
+    "professor": "Profesor",
+    "topic": "Materia",
+    "date": "Fecha",
+    "btn_edit": "Editar",
+    "btn_delete": "Eliminar"
+  }
+}
