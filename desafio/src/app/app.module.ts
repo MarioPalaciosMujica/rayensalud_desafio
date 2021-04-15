@@ -6,6 +6,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SharedModule } from '@shared/shared.module';
+import { TutorialComponent } from './modules/tutorial/tutorial.component';
 
 export function HttpLoaderFactory(http: HttpClient){
     return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -13,11 +15,13 @@ export function HttpLoaderFactory(http: HttpClient){
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TutorialComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
     HttpClientModule,
     TranslateModule.forRoot({
         loader: {
