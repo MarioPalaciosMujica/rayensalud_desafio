@@ -5,7 +5,8 @@
     "baseUrl": "src",
     "paths": {
         "@core/*": ["app/core/*"],
-        "@shared/*": ["app/shared/*"]
+        "@shared/*": ["app/shared/*"],
+        "@modules/*": ["app/modules/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
