@@ -55,7 +55,6 @@ export class CrearComponent implements OnInit, OnDestroy {
 
   onSubmit(){
     this.toModel();
-    console.log(this.model);
     this.tutorialService.create(this.model).subscribe(data => {
         this.router.navigate(['/inicio']);
     });

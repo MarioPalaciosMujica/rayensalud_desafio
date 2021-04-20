@@ -42,7 +42,7 @@ export class EditarComponent implements OnInit, OnDestroy {
 
   deleteById(id: number){
       const deleteById$: Subscription = this.tutorialService.deleteById(id).subscribe(data => {
-          //redurect to lista
+          // TODO: redireccionar a pagina de inicio 
       });
       this.subscriptions$.push(deleteById$);
   }

@@ -20,7 +20,6 @@ export class ListaComponent implements OnInit, OnDestroy {
   constructor(
       private tutorialService: TutorialService
   ) { 
-      // Listar todos los tutoriales
       const findAllTutorials$: Subscription = this.tutorialService.list().subscribe(data => {
           this.tutorialList = data as TutorialModel[];
       });
@@ -43,7 +42,7 @@ export class ListaComponent implements OnInit, OnDestroy {
 
   deleteAll() {
       const deleteAll$: Subscription = this.tutorialService.deleteAll().subscribe(data => {
-          // show msn
+          // TODO: mostrar mensaje de borrado
       });
       this.subscriptions$.push(deleteAll$);
   }
