@@ -23,7 +23,6 @@ export class ListaComponent implements OnInit, OnDestroy {
       // Listar todos los tutoriales
       const findAllTutorials$: Subscription = this.tutorialService.list().subscribe(data => {
           this.tutorialList = data as TutorialModel[];
-          console.log(this.tutorialList);
       });
       this.subscriptions$.push(findAllTutorials$);
   }
@@ -38,7 +37,6 @@ export class ListaComponent implements OnInit, OnDestroy {
   searchByDescription(desc: string){
       const findByDescription$: Subscription = this.tutorialService.findByDescription(desc).subscribe(data => {
           this.tutorialList = data as TutorialModel[];
-          console.log(this.tutorialList);
       });
       this.subscriptions$.push(findByDescription$);
   }

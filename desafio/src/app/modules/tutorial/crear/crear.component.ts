@@ -25,7 +25,7 @@ export class CrearComponent implements OnInit, OnDestroy {
       this.tutorialForm = this.fb.group({
       nombre: [null, [
         Validators.required,
-        Validators.minLength(2),
+        Validators.minLength(3),
         Validators.maxLength(50)
       ]],
       profesor: [null, [
@@ -54,30 +54,32 @@ export class CrearComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(){
-    // this.toModel();
+    this.toModel();
+    console.log(this.model);
     this.tutorialService.create(this.model).subscribe(data => {
         this.router.navigate(['/inicio']);
     });
   }
 
   toModel(){
-    // this.model.nombre = this.getNombre.value;
-    // this.model.profesor = this.getProfesor.value;
-    // this.model.materia = this.getmateria.value;
-    // this.model.fecha = this.getFecha.value;
+    this.model.nombre = this.getNombre.value;
+    this.model.profesor = this.getProfesor.value;
+    this.model.materia = this.getMateria.value;
+    this.model.fecha = this.getFecha.value;
   }
 
-  toForm(){
-    // this.setNombre = this.model.nombre;
-    // this.setProfesor = this.model.profesor;
-    // this.setMateria = this.model.materia;
-    // this.setFecha = this.model.fecha;
-  }
+  // toForm(){
+  //   this.setNombre = this.model.nombre;
+  //   this.setProfesor = this.model.profesor;
+  //   this.setMateria = this.model.materia;
+  //   this.setFecha = this.model.fecha;
+  // }
 
   get getNombre(){ return this.tutorialForm.get('nombre'); }
-  get profesor(){ return this.tutorialForm.get('profesor'); }
+  get getProfesor(){ return this.tutorialForm.get('profesor'); }
   get getMateria(){ return this.tutorialForm.get('materia'); }
   get getFecha(){ return this.tutorialForm.get('fecha'); }
+
   // set setNombre(value: string){ this.tutorialForm.get('nombre').setValue(value); }
   // set setProfesor(value: string){ this.tutorialForm.get('profesor').setValue(value); }
   // set setMateria(value: string){ this.tutorialForm.get('materia').setValue(value); }

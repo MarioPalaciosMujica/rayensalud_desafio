@@ -5,7 +5,11 @@
 <div class="row">
   <div class="col-xl-7">
     <!-- FORM -->
-    <form class="needs-validation" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form
+      class="needs-validation"
+      [formGroup]="tutorialForm"
+      (ngSubmit)="onSubmit()"
+    >
       <div class="add-product-form">
         <!-- Nombre -->
         <div class="form-group row">
@@ -49,6 +53,7 @@
             </div>
           </div>
         </div>
+        <!-- /Nombre -->
 
         <!-- Profesor -->
         <div class="form-group row">
@@ -59,7 +64,7 @@
             <input
               class="form-control first-letter-uppercase"
               type="text"
-              formControlName="Profesor"
+              formControlName="profesor"
             />
             <div
               *ngIf="
@@ -92,9 +97,95 @@
             </div>
           </div>
         </div>
+        <!-- /Profesor -->
 
-        <!-- Materia input form -->
-        <!-- Fecha input form -->
+        <!-- Materia -->
+        <div class="form-group row">
+          <label class="col-xl-3 col-sm-4 mb-0"
+            >{{ "CREAR.topic" | translate }}:</label
+          >
+          <div class="col-xl-8 col-sm-7">
+            <input
+              class="form-control first-letter-uppercase"
+              type="text"
+              formControlName="materia"
+            />
+            <div
+              *ngIf="
+                getMateria.errors?.required &&
+                (getMateria.dirty || getMateria.touched)
+              "
+              class="text text-danger"
+            >
+              {{ "CREAR.msn_err_required" | translate }}
+            </div>
+            <div
+              *ngIf="
+                getMateria.errors?.minlength &&
+                (getMateria.dirty || getMateria.touched)
+              "
+              class="text text-danger"
+            >
+              {{ "CREAR.msn_err_minlength" | translate }}
+              {{ getMateria.errors?.minlength.requiredLength }}
+            </div>
+            <div
+              *ngIf="
+                getMateria.errors?.maxlength &&
+                (getMateria.dirty || getMateria.touched)
+              "
+              class="text text-danger"
+            >
+              {{ "CREAR.msn_err_maxlength" | translate }}
+              {{ getMateria.errors?.maxlength.requiredLength }}
+            </div>
+          </div>
+        </div>
+        <!-- /Materia -->
+
+        <!-- Fecha -->
+        <div class="form-group row">
+          <label class="col-xl-3 col-sm-4 mb-0"
+            >{{ "CREAR.date" | translate }}:</label
+          >
+          <div class="col-xl-8 col-sm-7">
+            <input
+              class="form-control first-letter-uppercase"
+              type="text"
+              formControlName="fecha"
+            />
+            <div
+              *ngIf="
+                getFecha.errors?.required &&
+                (getFecha.dirty || getFecha.touched)
+              "
+              class="text text-danger"
+            >
+              {{ "CREAR.msn_err_required" | translate }}
+            </div>
+            <div
+              *ngIf="
+                getFecha.errors?.minlength &&
+                (getFecha.dirty || getFecha.touched)
+              "
+              class="text text-danger"
+            >
+              {{ "CREAR.msn_err_minlength" | translate }}
+              {{ getFecha.errors?.minlength.requiredLength }}
+            </div>
+            <div
+              *ngIf="
+                getFecha.errors?.maxlength &&
+                (getFecha.dirty || getFecha.touched)
+              "
+              class="text text-danger"
+            >
+              {{ "CREAR.msn_err_maxlength" | translate }}
+              {{ getFecha.errors?.maxlength.requiredLength }}
+            </div>
+          </div>
+        </div>
+        <!-- /Fecha -->
       </div>
       <br /><br />
 
@@ -103,7 +194,7 @@
           <button
             type="submit"
             class="btn btn-primary mr-1"
-            [disabled]="!form.valid"
+            [disabled]="!tutorialForm.valid"
           >
             {{ "CREAR.btn_add" | translate }}
           </button>

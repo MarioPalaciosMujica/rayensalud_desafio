@@ -12,6 +12,9 @@
     "professor": "Profesor",
     "topic": "Materia",
     "date": "Fecha",
+    "msn_err_required": "Campo requerido",
+    "msn_err_minlength": "Número mínimo de carácteres: ",
+    "msn_err_maxlength": "Número máximo de carácteres: ",
     "btn_add": "Agregar"
   },
   "EDITAR": {
